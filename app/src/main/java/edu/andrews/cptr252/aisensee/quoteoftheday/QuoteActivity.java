@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 public class QuoteActivity extends AppCompatActivity {
     public static final String EXTRA_AUTHOR_FACT =
             "edu.andrews.cptr252.aisensee.quoteoftheday.author_fact";
+    private static final String KEY_QUOTE_INDEX = "quoteIndex";
 
     private TextView mQuoteTextView;
     private TextView mAuthorTextView;
@@ -27,6 +28,14 @@ public class QuoteActivity extends AppCompatActivity {
 
     /** Index of current quote in list. */
     private int mCurrentIndex = 0;
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Store the index of the current quote in the Bundle.
+        // Use our key to access the value later.
+        savedInstanceState.putInt(KEY_QUOTE_INDEX, mCurrentIndex);
+    }
 
     /** Launch activity to display author fact */
     private void displayAuthorFact() {
@@ -54,6 +63,11 @@ public class QuoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote);
+
+        // Re-display the same quote we were on when the activity was destroyed.
+        if (savedInstanceState != null) {
+            mCurrentIndex = savedInstanceState.getInt(KEY_QUOTE_INDEX);
+        }
 
         // get references to our text views
         mQuoteTextView = findViewById(R.id.quoteTextView);
