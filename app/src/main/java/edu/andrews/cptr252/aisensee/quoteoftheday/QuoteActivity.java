@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -24,6 +25,9 @@ public class QuoteActivity extends AppCompatActivity {
     private TextView mQuoteTextView;
     private TextView mAuthorTextView;
     private Button mNextButton;
+
+    /** ImageView used to display inspirational image */
+    private ImageView mImageView;
 
     /** Quotes used in app */
     private Quote[] mQuoteList = new Quote[]{
@@ -83,6 +87,9 @@ public class QuoteActivity extends AppCompatActivity {
             mCurrentIndex = savedInstanceState.getInt(KEY_QUOTE_INDEX);
         }
 
+        // display image
+        mImageView = findViewById(R.id.imageView);
+        mImageView.setImageResource(R.drawable.coastline_picture);
         // get references to our text views
         mQuoteTextView = findViewById(R.id.quoteTextView);
         mQuoteTextView.setOnClickListener(new View.OnClickListener(){

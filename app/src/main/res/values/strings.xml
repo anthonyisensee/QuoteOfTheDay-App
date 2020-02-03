@@ -11,4 +11,5 @@
     <string name="quote_author_2">Hamlet</string>
     <string name="author_fact_2">Ended up dying, taking a lotta other people with him.</string>
     <string name="fact_missing">Sadly, we don\'t know anything about him/her/them/it. Go away and ask someone else.</string>
+    <string name="imageview_description">Inspirational image of something... inspirational, I guess.</string>
 </resources>
