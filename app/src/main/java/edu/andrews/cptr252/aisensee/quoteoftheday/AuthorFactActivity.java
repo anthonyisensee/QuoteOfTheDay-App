@@ -5,9 +5,16 @@ import android.widget.TextView;
 
 import android.os.Bundle;
 
+/**
+ * Activity that displays a fact about the author of a quote.
+ */
 public class AuthorFactActivity extends AppCompatActivity {
     private TextView mAuthorFactTextView;
 
+    /**
+     * Inflates layout. Display the fact sent by QuoteActivity.
+     * @param savedInstanceState Bundle object used to save activity state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

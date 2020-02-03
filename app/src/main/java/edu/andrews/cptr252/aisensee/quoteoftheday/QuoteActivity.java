@@ -10,7 +10,13 @@ import android.content.Intent;
 
 import org.w3c.dom.Text;
 
+/**
+ * Main activity for the application.
+ * Displays a series of quotes.
+ */
+
 public class QuoteActivity extends AppCompatActivity {
+    /** Key for fact about author stored in Intent sent to AuthorFactActivity. */
     public static final String EXTRA_AUTHOR_FACT =
             "edu.andrews.cptr252.aisensee.quoteoftheday.author_fact";
     private static final String KEY_QUOTE_INDEX = "quoteIndex";
@@ -29,6 +35,10 @@ public class QuoteActivity extends AppCompatActivity {
     /** Index of current quote in list. */
     private int mCurrentIndex = 0;
 
+    /**
+     * Remember the current quote when the activity is destroyed
+     * @param savedInstanceState Bundle used for saving identity of current quote.
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -59,6 +69,10 @@ public class QuoteActivity extends AppCompatActivity {
         mAuthorTextView.setText(author);
     }
 
+    /**
+     * Setup and inflate layout.
+     * @param savedInstanceState Previously saved Bundle.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
