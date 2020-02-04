@@ -1,15 +1,31 @@
 <resources>
+
+    // names of stuff
     <string name="app_name">QuoteOfTheDay</string>
     <string name="next_button">--Next-></string>
-    <string name="quote_text_0">If at first you don\'t succeed, skydiving\'s not for you.</string>
-    <string name="quote_author_0">Anonymous</string>
-    <string name="author_fact_0">He\'s probably a real stand-up sorta guy, but nobody really knows.</string>
-    <string name="quote_text_1">Well, that\'s one way to do it.</string>
-    <string name="quote_author_1">Anthony</string>
-    <string name="author_fact_1">Minimalist</string>
-    <string name="quote_text_2">To be or not to be, that is the question.</string>
-    <string name="quote_author_2">Hamlet</string>
-    <string name="author_fact_2">Ended up dying, taking a lotta other people with him.</string>
     <string name="fact_missing">Sadly, we don\'t know anything about him/her/them/it. Go away and ask someone else.</string>
     <string name="imageview_description">Inspirational image of something... inspirational, I guess.</string>
+
+    // quotes
+    <string name="quote_text_0">If at first you don\'t succeed, skydiving\'s not for you.</string>
+    <string name="quote_text_1">Well, that\'s one way to do it.</string>
+    <string name="quote_text_2">To be or not to be, that is the question.</string>
+    <string name="quote_text_3">I think, therefore I am.</string>
+    <string name="quote_text_4">The only thing that went through the mind of the bowl of petunias as it fell was Oh no, not again.</string>
+
+    // authors
+    <string name="quote_author_0">Anonymous</string>
+    <string name="quote_author_1">Anthony</string>
+    <string name="quote_author_2">Hamlet</string>
+    <string name="quote_author_3">René Descartes</string>
+    <string name="quote_author_4">Douglas Adams</string>
+
+    // facts
+    <string name="author_fact_0">He\'s probably a real stand-up sorta guy, but nobody really knows.</string>
+    <string name="author_fact_1">Minimalist</string>
+    <string name="author_fact_2">Ended up dying, taking a lotta other people with him.</string>
+    <string name="author_fact_3">One of the founders of modern philosophy.</string>
+    <string name="author_fact_4">Many people have speculated that if we knew exactly why the bowl of petunias had thought that we would know a lot more about the nature of the universe than we do now.</string>
+
+
 </resources>

@@ -34,6 +34,8 @@ public class QuoteActivity extends AppCompatActivity {
             new Quote(R.string.quote_text_0, R.string.quote_author_0, R.string.author_fact_0),
             new Quote(R.string.quote_text_1, R.string.quote_author_1, R.string.author_fact_1),
             new Quote(R.string.quote_text_2, R.string.quote_author_2, R.string.author_fact_2),
+            new Quote(R.string.quote_text_3, R.string.quote_author_3, R.string.author_fact_3),
+            new Quote(R.string.quote_text_4, R.string.quote_author_4, R.string.author_fact_4),
     };
 
     /** Index of current quote in list. */
