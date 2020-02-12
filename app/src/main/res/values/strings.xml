@@ -2,9 +2,8 @@
 
     // names of stuff
     <string name="app_name">QuoteOfTheDay</string>
-    <string name="next_button">--Next-></string>
+    <string name="next_button">Next</string>
     <string name="fact_missing">Sadly, we don\'t know anything about him/her/them/it. Go away and ask someone else.</string>
-    <string name="imageview_description">Inspirational image of something... inspirational, I guess.</string>
 
     // quotes
     <string name="quote_text_0">If at first you don\'t succeed, skydiving\'s not for you.</string>
@@ -27,5 +26,7 @@
     <string name="author_fact_3">One of the founders of modern philosophy.</string>
     <string name="author_fact_4">Many people have speculated that if we knew exactly why the bowl of petunias had thought that we would know a lot more about the nature of the universe than we do now.</string>
 
+    // image descriptions
+    <string name="imageview_description">Inspirational image of something... inspirational, I guess.</string>
 
 </resources>
