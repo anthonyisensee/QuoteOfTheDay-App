@@ -17,10 +17,12 @@ import org.w3c.dom.Text;
  */
 
 public class QuoteActivity extends AppCompatActivity {
+
     /** Key for fact about author stored in Intent sent to AuthorFactActivity. */
-    public static final String EXTRA_AUTHOR_FACT =
-            "edu.andrews.cptr252.aisensee.quoteoftheday.author_fact";
-    private static final String KEY_QUOTE_INDEX = "quoteIndex";
+    public static final String EXTRA_AUTHOR_FACT = "edu.andrews.cptr252.aisensee.quoteoftheday.author_fact";
+
+    /** Key used to access the quote index by adding it to a Bundle. */
+    private static final String KEY_QUOTE_INDEX = "quoteIndex"; // unlike the EXTRA_AUTHOR_FACT key above, this is private, as only used in this class.
 
     private TextView mQuoteTextView;
     private TextView mAuthorTextView;
@@ -42,14 +44,16 @@ public class QuoteActivity extends AppCompatActivity {
     private int mCurrentIndex = 0;
 
     /**
-     * Remember the current quote when the activity is destroyed
+     * Remember the current quote when the activity is destroyed.
+     * Allows us to rotate the device and preserve the current quote.
      * @param savedInstanceState Bundle used for saving identity of current quote.
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         // Store the index of the current quote in the Bundle.
-        // Use our key to access the value later.
+        // We will be able to use the KEY_QUOTE_INDEX key to access the mCurrentIndex in onCreate.
+        // Note that this is also a key/value pair.
         savedInstanceState.putInt(KEY_QUOTE_INDEX, mCurrentIndex);
     }
 
@@ -62,7 +66,7 @@ public class QuoteActivity extends AppCompatActivity {
         // add extra containing resource id for fact
         i.putExtra(EXTRA_AUTHOR_FACT, mQuoteList[mCurrentIndex].getAuthorFact());
         // send the intent to the Activity Manger.
-        startActivity(i);
+        startActivity(i);   // actually starts the activity
 
     }
 
@@ -84,16 +88,25 @@ public class QuoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quote);
+        setContentView(R.layout.activity_quote);    // sets the view that we'll see, attached to the appropriate .xml file
 
         // Re-display the same quote we were on when the activity was destroyed.
-        if (savedInstanceState != null) {
-            mCurrentIndex = savedInstanceState.getInt(KEY_QUOTE_INDEX);
+        // note that this happens first in the onCreate so that checking for this position is prioritized.
+        if (savedInstanceState != null) {   // if the key/value pair hasn't been created, the Bundle will not have been created.
+            mCurrentIndex = savedInstanceState.getInt(KEY_QUOTE_INDEX); // extracts the Bundled mCurrentIndex and sets it to the proper index.
         }
 
         // display image
         mImageView = findViewById(R.id.imageView);
         mImageView.setImageResource(R.drawable.coastline_picture);
+        mImageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                displayAuthorFact();
+            }
+
+        });
+
         // get references to our text views
         mQuoteTextView = findViewById(R.id.quoteTextView);
         mQuoteTextView.setOnClickListener(new View.OnClickListener(){

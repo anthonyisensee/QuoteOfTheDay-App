@@ -9,6 +9,8 @@ import android.os.Bundle;
  * Activity that displays a fact about the author of a quote.
  */
 public class AuthorFactActivity extends AppCompatActivity {
+
+    /** Text view for the author fact */
     private TextView mAuthorFactTextView;
 
     /**
@@ -26,6 +28,7 @@ public class AuthorFactActivity extends AppCompatActivity {
         // extract the resource id for the fact from the intent
         // if none is provided, display the "fact missing" message
         int authorFact = getIntent().getIntExtra(QuoteActivity.EXTRA_AUTHOR_FACT, R.string.fact_missing);
+        // unpacks the intent
 
         // put the fact string in the fact TextView
         mAuthorFactTextView.setText(authorFact);
