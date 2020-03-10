@@ -1,36 +1,20 @@
 package edu.andrews.cptr252.aisensee.quoteoftheday;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.widget.TextView;
-
-import android.os.Bundle;
+import androidx.fragment.app.Fragment;
 
 /**
  * Activity that displays a fact about the author of a quote.
  */
-public class AuthorFactActivity extends AppCompatActivity {
+public class AuthorFactActivity extends SingleFragmentActivity {
 
-    /** Text view for the author fact */
-    private TextView mAuthorFactTextView;
-
-    /**
-     * Inflates layout. Display the fact sent by QuoteActivity.
-     * @param savedInstanceState Bundle object used to save activity state.
-     */
+    /** Extends our SingleFragmentActivity class to display our AuthorFact, extracting
+     * the author fact from the bundle that was passed to it. */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_author_fact);
-
-        // get reference to TextView for the fact
-        mAuthorFactTextView = (TextView) findViewById(R.id.authorTextFactView);
-
-        // extract the resource id for the fact from the intent
-        // if none is provided, display the "fact missing" message
-        int authorFact = getIntent().getIntExtra(QuoteActivity.EXTRA_AUTHOR_FACT, R.string.fact_missing);
-        // unpacks the intent
-
-        // put the fact string in the fact TextView
-        mAuthorFactTextView.setText(authorFact);
+    protected Fragment createFragment() {
+        int authorQuote = (int) getIntent().getSerializableExtra(QuoteFragment.EXTRA_AUTHOR_FACT);
+        return AuthorFactFragment.newInstance(authorQuote);
     }
+
+
+
 }
