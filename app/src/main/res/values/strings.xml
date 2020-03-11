@@ -1,6 +1,6 @@
 <resources>
 
-    // names of stuff
+    // names of buttons
     <string name="app_name">QuoteOfTheDay</string>
     <string name="next_button">Next</string>
     <string name="fact_missing">Sadly, we don\'t know anything about him/her/them/it. Go away and ask someone else.</string>
